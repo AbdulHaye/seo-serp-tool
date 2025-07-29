@@ -1,0 +1,230 @@
+.screenshots-container {
+    width: 100%;
+    max-width: 500px;
+    border: none;
+    border-radius: 1rem;
+    background: linear-gradient(145deg, rgb(252, 252, 252), rgb(245, 245, 245));
+    /* Subtle gradient for depth */
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for sophistication */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  /* Hover effect for the upload box */
+  .screenshots-container:hover {  
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+    transform: translateY(-3px); /* Slight lift effect on hover */
+  }
+  .heading-upload{
+    color: #7B0373;
+  }
+  .container {
+    margin-top: 60px; /* Match VisibilityTool's offset */
+  }
+  
+  .image-gallery {
+    margin-top: 2rem;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+  
+  .card-text {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  /* Style the "Select Images" text */
+  .form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #7B0373 /* Darker text for better contrast */
+  }
+  
+  /* Style the custom file input wrapper */
+  .custom-file-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid #7f8388; /* Match Bootstrap form-control border */
+    border-radius: 0.3rem;
+    background-color: white; /* White background like form-control */
+    padding: 0; /* Remove padding to let child elements control spacing */
+    height: 38px; /* Match the height of a typical form-control input */
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Hover effect for the wrapper (when not disabled) */
+  .custom-file-input:hover:not(.disabled) {
+    border-color: #7e2594; /* Blue border on hover */
+  }
+  
+  /* Disabled state for the wrapper */
+  .custom-file-input.disabled {
+    background-color: #e9ecef; /* Match form-control disabled background */
+    border-color: #ced4da;
+    cursor: not-allowed;
+  }
+  
+  /* Style the "Choose Files" button inside the wrapper */
+  .custom-file-input .choose-file-btn {
+    background-color: #f8f9fa; /* Light gray background */
+    border: none;
+    border-right: 1px solid #ced4da; /* Separator between button and text area */
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #393b3c; /* Match form-control text color */
+    cursor: pointer;
+    height: 100%; /* Fill the height of the wrapper */
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for the button (when not disabled) */
+  .custom-file-input:not(.disabled) .choose-file-btn:hover {
+    background-color: #bec3c9; /* Slightly darker gray on hover */
+  }
+  
+  /* Disabled state for the button */
+  .custom-file-input.disabled .choose-file-btn {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+  }
+  
+  /* Style the file name display area */
+  .custom-file-input .file-name-display {
+    flex-grow: 1; /* Take up remaining space */
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #495057; /* Match form-control text color */
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Show ellipsis for long text */
+  }
+  
+  /* Modal styles */
+  .modal-lg {
+    max-width: 90vw; /* Ensure the modal is responsive */
+  }
+  
+  .modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    overflow: auto; /* Allow scrolling if the zoomed image overflows */
+    max-height: 70vh; /* Limit the modal body height */
+  }
+  
+  .modal-body img.zoomable-image {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+  }
+  
+  .modal-backdrop {
+    z-index: 1040; /* Ensure the backdrop is below the modal but above other content */
+  }
+  
+  .modal {
+    z-index: 1050; /* Ensure the modal is above the backdrop */
+  }
+  
+  /* Modal footer styles */
+  .modal .modal-footer {
+    display: flex !important; /* Ensure flexbox is applied */
+    justify-content: flex-end !important; /* Align buttons to the right */
+    align-items: center; /* Vertically center buttons */
+    gap: 0.15rem; /* Tighter spacing between buttons */
+    padding: 0.5rem 1rem; /* Compact padding */
+    flex-wrap: nowrap; /* Prevent wrapping to keep buttons in a single row */
+  }
+  
+  /* Modal footer button styles */
+  .modal-footer .btn {
+    margin: 0; /* Remove all margins */
+    padding: 0.4rem 0.6rem; /* Tighter padding for compact buttons */
+    font-size: 0.85rem; /* Smaller font size for tighter layout */
+    line-height: 1.2; /* Adjust line height for better text alignment */
+    transition: background-color 0.3s ease, transform 0.1s ease; /* Smooth transitions */
+    border-radius: 0.25rem; /* Slightly smaller border radius */
+  }
+  
+  /* Zoom In button (green) */
+  .modal-footer button.btn.zoom-in {
+    background-color: #09100a !important; /* Bootstrap success green */
+    border-color: #28a745 !important;
+    color: white !important;
+  }
+  
+  .modal-footer button.btn.zoom-in:hover:not(:disabled) {
+    background-color: #2a5d35 !important; /* Darker green on hover */
+    border-color: #204f2b !important;
+    transform: scale(1.05); /* Slight scale-up on hover */
+  }
+  
+  /* Zoom Out button (red) */
+  .modal-footer button.btn.zoom-out {
+    background-color: #dc3545 !important; /* Bootstrap danger red */
+    border-color: #dc3545 !important;
+    color: white !important;
+  }
+  
+  .modal-footer button.btn.zoom-out:hover:not(:disabled) {
+    background-color: #7b2029 !important; /* Darker red on hover */
+    border-color: #72232b !important;
+    transform: scale(1.05);
+  }
+  
+  /* Download button (blue) */
+  .modal-footer button.btn.download {
+    background-color: #007bff !important; /* Bootstrap primary blue */
+    border-color: #007bff !important;
+    color: white !important;
+  }
+  
+  .modal-footer button.btn.download:hover:not(:disabled) {
+    background-color: #1d4774 !important; /* Darker blue on hover */
+    border-color: #154f8d !important;
+    transform: scale(1.05);
+  }
+  
+  /* Close button (gray) */
+  .modal-footer button.btn.close-btn {
+    background-color: #6c757d !important; /* Bootstrap secondary gray */
+    border-color: #6c757d !important;
+    color: white !important;
+  }
+  
+  .modal-footer button.btn.close-btn:hover:not(:disabled) {
+    background-color: #3a454d !important; /* Darker gray on hover */
+    border-color: #545b62 !important;
+    transform: scale(1.05);
+  }
+  
+  /* Disabled button styles */
+  .modal-footer button.btn:disabled {
+    opacity: 0.6 !important;
+    transform: none; /* Disable scale effect when disabled */
+    cursor: not-allowed !important;
+  }
+  
+  /* Icon spacing */
+  .modal-footer button.btn svg {
+    margin-right: 0.3rem; /* Slightly reduced space between icon and text */
+    vertical-align: middle;
+  }
